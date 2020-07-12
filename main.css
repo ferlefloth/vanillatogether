@@ -1,0 +1,57 @@
+body{
+    background: linear-gradient(#98BCB2, #98BCB2);
+}
+
+h1{
+    font-family: 'Bebas Neue', cursive;
+    color:#fff;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+p{
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#fff;
+    margin-top: 0em;
+}
+
+h1 span{
+    color: #EA4A66;
+}
+
+header{
+    position: absolute;
+    max-width: 60%;
+    top: 2em;
+    left: 2em;
+    border-bottom: 1px dashed #fff;
+}
+
+main{
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+main .container{
+    display: flex;
+    flex-direction: column;
+}
+
+main .box{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 150px;
+    background-color: #240A2D;
+    border: 1px dashed #240A2D;
+    border-radius: 1em;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+/**/
