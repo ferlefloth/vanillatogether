@@ -2,7 +2,7 @@ Challenge Together /W - Fernando Lefloth
 
 -Vanilla JS /Clone
 
-Observaciones a contemplar a la hora de leer el código:
+-----------------------Observaciones a contemplar a la hora de leer el código---------------------------
 
 -Leer a partir de la linea 150 donde está el titulo : ////////////////////Ejecución del click///////////////////
 a partir del subtitulo para abajo podrán ir siguiendo la funcionalidad del código donde se inicia llama a la función click.
