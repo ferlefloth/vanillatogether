@@ -41,7 +41,7 @@ var container;
 var elems;
 var box;
 
-var isOpen = false;
+var isOpen = false; // Esto es un Flag que se implementara papra mostrar y esconder los clones que se muestran por pantalla, por defecto, no muestra ningún clon 
 
 /**
  * Create n clones and append the behind the target element.
@@ -49,35 +49,29 @@ var isOpen = false;
  * @param {int} numberOfClones 
  */
 
-//1- Hacer un bucle que cree N CLONES y haga el push ---------->OK 
-//2- Modificar clone que coincida con margin y estilo en base a los datos dados
 
- function createOffsetClones(target, numberOfClones){
+ function createOffsetClones(target, numberOfClones){ //el parámetro que se pasa por target, es BOX y el numberOfClones la cantidad total de clones que se quieren crear
   let createdElements = [];
-  let indice=0
+  let indice=0  //Contador que determina el indice de los colores de la variable Pallete
   
-  for(let i=0; i<numberOfClones; i++){
+  for(let i=0; i<numberOfClones; i++){ //Por cada número de clones a crear :
    
-    target.style.margin = 10
+    target.style.margin = 10 
     
-    
-   //target.style.backgroundColor= palette[indice]
 
-    
-    
-    var cln = target.cloneNode(true);
-    createdElements.push(cln)
+    var cln = target.cloneNode(true); 
+    createdElements.push(cln)  //se puseha  el clon a el array created elements
     
  
     
-    if(indice==3){
+    if(indice==3){ //Se resetea el valor del indice de la variable pallete (colores)
 
       indice=0
   
     }
     cln.style.backgroundColor= palette[indice]
     indice=indice+1
-    cln.classList.add("clonebot");
+    cln.classList.add("clonebot"); //se le agrega una class a ese cln , llamada clonebot
   }
 
   return createdElements;
@@ -85,15 +79,14 @@ var isOpen = false;
 }
 
 
-function hideElemnts(){
+function hideElemnts(){ //Función que esconde los clones mostrador por pantalla
 
-  isOpen=false
+  isOpen=false //Vuelve el flag a false
 
-  var cloneToHide=  Array.from(document.getElementsByClassName('clonebot'));
+  var cloneToHide=  Array.from(document.getElementsByClassName('clonebot')); //introduce los clonebot dentro de un array para luego eliminarlos
   
-  //alert(cloneToHide)
-  
-  cloneToHide.forEach(element => {
+
+  cloneToHide.forEach(element => {  //de cada elemento de la array CloneToHide, se elimina cada clone
      element.parentNode.removeChild(element);
    });
 
@@ -103,9 +96,9 @@ function hideElemnts(){
 
 function displayedOffSetClones(createdElements,container){
   
-  isOpen=true
+  isOpen=true //Flag que activa la funcion para que se muestrn los clones
 
-  createdElements.forEach(element => {
+  createdElements.forEach(element => { //De cada elemento  de CreatedElements se adjunta a el Container que tiene una disposición en columna
     
     container.appendChild(element)  
   });
@@ -122,19 +115,19 @@ function displayedOffSetClones(createdElements,container){
 
     
       if (typeof event === 'object') {
-        switch (event.container) {
+        switch (event.container) { //Se escucha a la variable container y se propone 2 casos.
           case 0:
             
-            alert('Estas cliqueando otra cosa');
+            alert('Estas cliqueando otra cosa'); // En el caso que no escuche a el container.
             break;
 
 
           default:
            
-            if(isOpen === false){
-              displayedOffSetClones(elems,container)
+            if(isOpen === false){     
+              displayedOffSetClones(elems,container)  //Esta funcion activa y muestra por pantalla los clones
             }else{
-              hideElemnts()
+              hideElemnts() //esta función hace que se escondan los clones que se muestran por pantalla
             }
         }
       }
@@ -144,20 +137,18 @@ function displayedOffSetClones(createdElements,container){
 
 
 
-// container element reference. This should be clicked. // ---------> OK
+// container element reference. This should be clicked. // 
 container = null;
-container= document.getElementsByClassName('container')[0]
+container= document.getElementsByClassName('container')[0] //El getElementsByClassName devuelve los elementos en una HtmlObjetCOLLLETCTION con una clase (similar a un Array), como bien dice el enunciado, no se modificó el HTML. El getElementById es mucho más manipulable.
 console.log(container)
 
-// box element reference. This should be cloned.---------> Clonar el elemento box
-
+// box element reference. This should be cloned.
 box = null;
-box= document.getElementsByClassName('box')[0]
+box= document.getElementsByClassName('box')[0] //El getElementsByClassName devuelve los elementos en una HtmlObjetCOLLLETCTION con una clase (similar a un Array), como bien dice el enunciado, no se modificó el HTML. El getElementById es mucho más manipulable.
 console.log(box)
 
-
+////////////////////Ejecución del click///////////////////
 // get the elemens
 elems = createOffsetClones(box, 12);
-
-container.addEventListener("click", click);
+container.addEventListener("click", click); //Se llama un AddEventListener que disparará la funcion CLICK para que luego se ejecuten 2 posibles opciones
 //createOffsetClones(box, 12)
