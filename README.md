@@ -6,7 +6,9 @@ Observaciones a contemplar a la hora de leer el código:
 
 -Leer a partir de la linea 150 donde está el titulo : ////////////////////Ejecución del click///////////////////
 a partir del subtitulo para abajo podrán ir siguiendo la funcionalidad del código donde se inicia llama a la función click.
+
 -Cada una de las funciones está comentada con una breve explicación de que hace cada una.
+
 -Se respetaron las reglas del challenge.
 -Lo único que falto, por cuestiones de tiempo , fue la animación a la hora de esconder los clones. El resto, está igual a lo que figura en el video de referencia.
 
